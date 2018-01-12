@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>CountDown Button with Firebase!</title>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+  <!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>CountDown Button with Firebase!</title>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+  </head>
+
+  <body>
+
+    <h1>Only <span id="click-value"></span> clicks to go!!</h1>
+
+    <button id="click-button">Click Me!!!!</button>
+    <button id="restart-button">Restart</button>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script src="logic.js"></script>
+
+  </body>
+
+</html>
+
+</head>
+
+    <script>
+
+
+
+
+// Initialize Firebase (YOUR OWN APP)
+ var config = {
+    apiKey: "AIzaSyDGC2VCBBp5exgmYWFm3nM9H6rvnb2S8MI",
+    authDomain: "bws-case-first-project.firebaseapp.com",
+    databaseURL: "https://bws-case-first-project.firebaseio.com",
+    projectId: "bws-case-first-project",
+    storageBucket: "bws-case-first-project.appspot.com",
+    messagingSenderId: "102932033078"
+  };
+  firebase.initializeApp(config);
+// Make sure that your configuration matches your firebase script version
+// (Ex. 3.0 != 3.7.1)
+
+// Create a variable to reference the database
+
+var database = firebase.database();
+
+// var database = ...
+
+
+// Use the below initialValue
+var initialValue = 100;
+
+// Use the below variable clickCounter to keep track of the clicks.
+var clickCounter = initialValue;
+
+// --------------------------------------------------------------
+
+// At the initial load and on subsequent data value changes, get a snapshot of the current data. (I.E FIREBASE HERE)
+// This callback keeps the page updated when a value changes in firebase.
+// HINT: Assuming 'database' is our database variable, use...
+// database.ref().on("value", function(snapshot)) {}
+
+database.ref().on("value", function(snapshot) {
+
+      console.log(snapshot.val());
+
+
+      clickCounter = snapshot.val().clickCount;
+
+      console.log(clickCounter);
+
+
+
+      $("#click-value").text(snapshot.val().clickCount);
+
+
+
+
+    }, function(errorObject) {
+
+
+      console.log("The read failed: " + errorObject.code);
+    });
+
+
+// --------------------------------------------------------------
+
+// Whenever a user clicks the click button
+$("#click-button").on("click", function() {
+
+  // Reduce the clickCounter by 1
+  clickCounter--;
+
+  // Alert User and reset the counter
+  if (clickCounter === 0) {
+
+    alert("Phew! You made it! That sure was a lot of clicking.");
+
+    clickCounter = initialValue;
+
+  }
+
+  // Save new value to Firebase
+database.ref().set ({
+  clickCount: clickCounter
+});
+
+  // Log the value of clickCounter
+  console.log(clickCounter);
+
+});
+
+// Whenever a user clicks the restart button
+$("#restart-button").on("click", function() {
+
+  // Set the clickCounter back to initialValue
+  clickCounter = initialValue;
+
+  // Save new value to Firebase
+database.ref().set({
+  clickCount: ClickCounter
+});
+
+  // Log the value of clickCounter
+  console.log(clickCounter);
+
+  // Change the HTML Values
+  $("#click-value").text(clickCounter);
+
+
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+
+  </body>
+
+</html>

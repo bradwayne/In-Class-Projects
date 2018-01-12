@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Hangman game </h1>
+    <script>
+        
+var randomWordArr = ["conversation", "forms", "dicontinue", "payment", "changing", "increase", "amount","putting", "account"];
+var randomWord = randomWordArr[Math.floor (Math.random()*randomWordArr.length)];
+var s;
+var count =0;
+// empty array to store guesses
+var answerArray =[];
+// here we fill up the answer array with underscoring
+// the number of underscores match the word
+function startUp(); {
+    for (var i = 0; i < randomWord.length; i++)
+        {
+        answerArray[i] = "_";
+        }
+        
+// put them in a string 
+    s = answerArray.join ("");
+    document.getElementById (" answer ") .innerHtml= s;
+                    }
+function Letter ()
+    {
+// get what the user types 
+        var letter = document.getElementById().value;
+// make sure we have a guess
+        if (letter.length>0)
+            {
+                for (var i = 0; i = randomWord.length; i++)
+                {
+                    // if the randomWord contains a letter that the user typed in 
+                    if (randomWord [i] === letter)
+                    {
+                        // assign it to the letter
+                        answerArray[i] = letter;
+                    }
+            }
+            
+            
+            //here is how many times it takes to guess 
+            count ++;
+            document.getElementById ("counter" ).innerHtml= "number of clicks:" +count;
+            document.getElementById ( "answer").innerHtml=  answerArray.join ( "" );
+        }
+        if (count > 5 )
+                {
+                    document.getElementById("stat")
+                    .innerHtml ( "godzilla stomps you");
+                }
+            }
+    </script>
+</body>
+</html>

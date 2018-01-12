@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Pricing Calculator</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+
+	body, .jumbotron { padding: 30px; }
+	.text-giant { font-size: 40px; }
+	
+</style>
+
+</head>
+
+<body>
+
+	<div class="jumbotron">
+		<h2>how much do pies cost?</h2>
+	</div>
+
+
+	<form>
+
+		<div class="form-group">
+			<label for="price">Price</label>
+			<input type="text" class="form-control" name="price" value="20">
+		</div>
+
+		<div class="form-group">
+			<label for="quantity">
+				Quantity
+				<span class="label label-primary quantity-label">1</span>
+			</label>
+			<input type="range" class="form-control" name="quantity" value="1" min="1" max="10" step="1">
+		</div>
+
+	</form>
+
+	
+	<div class="text-right text-giant total"></div>	
+
+
+
+<!--starting Javascript-->
+<script>
+
+	//grab everything we need
+	var priceInput = document.querySelector('[name=price]');
+	var quantityInput = document.querySelector('[name=quantity]');
+	var total = document.querySelector('.total');
+	var quantityLabel = document.querySelector('.quantity-label');
+
+
+
+	//create function that we need
+	function calculatePieCost() {
+
+		var price = priceInput.value;
+
+		var quantity = quantityInput.value;
+
+		var cost = price * quantity;
+
+		console.log(cost);
+
+		total.innerText = '$' + cost.toFixed(2);
+	}
+
+	function updateQuantityLabel() {
+		var quantity = quantityInput.value;
+		quantityLabel.innerText = quantity;
+	}
+
+	calculatePieCost();
+
+
+	// add event listeners
+	priceInput.addEventListener('input', calculatePieCost);
+	quantityInput.addEventListener('input', calculatePieCost);
+	quantityInput.addEventListener('input', updateQuantityLabel);
+
+
+</script>
+
+</body>
+</html>

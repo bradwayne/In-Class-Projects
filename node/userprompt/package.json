@@ -1,0 +1,11 @@
+{
+  "name": "userprompt",
+  "version": "1.0.0",
+  "description": "superpowers",
+  "main": "userpromt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brad Schmaeman",
+  "license": "ISC"
+}

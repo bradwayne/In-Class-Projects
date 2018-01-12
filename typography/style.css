@@ -1,0 +1,36 @@
+.h1 {
+	font-family: times new roman;
+	font-size: 50px;
+	color: blue;
+}
+
+
+h1:hover {
+	color: green;
+	font-size: 25px;
+}
+
+
+h1:active {
+	background-color: black;
+	color: white;
+}
+
+
+
+
+
+h3 {
+	font-family: 'Fascinate Inline', cursive;
+	font-size: 50px;
+	font-weight: 400px;
+}
+
+p {
+	font-family: 'Baloo Chettan', cursive;
+}
+
+h4 {
+	font-family: 'Playball', cursive;
+	font-size: 35px;
+}

@@ -1,0 +1,2 @@
+Name : jenn, Date : Thu Jan 11 2018 19:29:19 GMT-0500 (Eastern Standard Time), temperature (F) : 76, Location : pompano beach
+Name : brad, Date : Thu Jan 11 2018 19:29:44 GMT-0500 (Eastern Standard Time), temperature (F) : 55, Location : cleveland

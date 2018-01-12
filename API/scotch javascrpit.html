@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Getting Started with Javascript</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+		body { padding: 30px; }
+</style>
+
+</head>
+
+<body>
+
+	<div class="jumbotron text-center">
+		<button class="btn btn-danger" onClick="goCoocoo()">
+			Go Coocoo
+		</button>
+	</div>
+
+	<div class="jumbotron text-center">
+		<button class="btn btn-primary lala-btn">
+			Not Listening
+		</button>
+	</div>
+
+
+<!--starting Javascript-->
+<script>
+
+	// grab elemnets from dom
+	// attachevent listeners
+
+// button one
+function goCoocoo() {
+	var body = document.querySelector('body');
+	body.style.backgroundColor = '#c00c00';
+}
+
+//button two
+
+var lalaButton = document.querySelector('.lala-btn');
+
+function notListening() {
+document.body.style.backgroundColor = '#1a1a1a';
+}
+
+lalaButton.addEventListener('click', notListening);
+lalaButton.addEventListener('mouseenter', goCoocoo);
+lalaButton.addEventListener('mouseleave', notListening);
+
+
+
+</script>
+</body>
+</html>
