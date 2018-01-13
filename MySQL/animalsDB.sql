@@ -1,28 +1,11 @@
--- Drops the animals_db if it exists currently --
-DROP DATABASE IF EXISTS animals_db;
--- Creates the "animals_db" database --
-CREATE DATABASE animals_db;
--- -- -- Makes it so all of the following code will affect animals_db --
+
 USE animals_db;
--- Creates the table "people" within animals_db --
+
 CREATE TABLE people (
---     id INTEGER(11) AUTO_INCREMENT NOT NULL,
-    `name` VARCHAR(30) NOT NULL,
-    `has_pet` BOOLEAN NOT NULL,
-    pet_name VARCHAR(30),
-    pet_age INTEGER(10),
-    PRIMARY KEY (id)
+    name VARCHAR(30) NOT NULL,
+    has_pet BOOLEAN NOT NULL,
+    pet_name VARCHAR(30) NULL,
+    pet_age INT(30) NULL
 );
--- Creates new rows containing data in all named columns --
--- INSERT INTO people (name, has_pet, pet_name, pet_age)
--- VALUES ("Ahmed", TRUE, "Rockington", 100);
--- INSERT INTO people (name, has_pet, pet_name, pet_age)
--- VALUES ("Ahmed", TRUE, "Rockington", 100);
--- INSERT INTO people (name, has_pet, pet_name, pet_age)
--- VALUES ("Jacob", TRUE, "Misty", 10);
--- INSERT INTO people (name, has_pet)
--- VALUES ("Peter", false);
--- Updates the row where the column name is peter --
--- UPDATE people
--- SET has_pet = true, pet_name = "Franklin", pet_age = 2
--- WHERE name = "Peter";
+
+DESCRIBE people;

@@ -3,23 +3,29 @@ DROP DATABASE IF EXISTS favorite_db;
 -- Creates the "favorite_db" database --
 CREATE DATABASE favorite_db;
 -- Make it so all of the following code will affect favorite_db --
+USE favorite_db;
 -- Creates the table "favorite_foods" within favorite_db --
 CREATE TABLE favorite_foods (
   -- Make a string column called "food" which cannot contain null --
-  foods VARCHAR(50) NOT NULL,
+	food VARCHAR(50) NOT NULL,
   -- Make an numeric column called "score" --
-    score INT (10)
+	score INT(10)
 );
 CREATE TABLE favorite_songs (
   -- Make a string column called "song" which cannot contain null --
-    score INTEGER(100) NOT NULL,
+	song VARCHAR(100) NOT NULL,
   -- Make a string column called "artist" --
-	artist VARCHAR (50),
+	artist VARCHAR(50),
   -- Make an integer column called "score" --
-	score INT (10)
+	score INT(10)
 );
 CREATE TABLE favorite_movies (
-    movie VARCHAR(100) NOT NULL,
-    five_times BOOLEAN DEFAULT FALSE,
-    score INT(10)
-);
+  -- Create a numeric column called "id" which automatically increments and cannot be null --
+  -- Create a string column called "movie" which cannot be null --
+	film VARCHAR(100) NOT NULL,
+  -- Create a boolean column called "five_times" that sets the default value to false if nothing is entered --
+	five_times BOOLEAN DEFAULT false,
+ -- Make an integer column called "score" --
+	score INT(10)
+  -- Set the primary key of the table to id --
+  );
