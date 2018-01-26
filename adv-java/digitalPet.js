@@ -86,7 +86,7 @@ function DigitalPet() {
             this.sleepy = true;
             console.log('MUAHAHAHAHAHAHA! TAKE THAT FURNITURE!');
         } else {
-            CSSNamespaceRule.log('I\'ve already destroyed it all!');
+            console.log('I\'ve already destroyed it all!');
         }
     };
 
@@ -100,3 +100,6 @@ function DigitalPet() {
     cat.buyNewFurniture();
     dog.sleepy = true;
     dog.sleep();
+    cat.hungry = true;
+    cat.feed();
+    cat.sleep();

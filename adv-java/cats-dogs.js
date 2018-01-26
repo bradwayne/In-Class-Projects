@@ -18,6 +18,7 @@ cats.makeNoise();
 // if we want, we can change an objects properties after they're created
 cats.raining = true;
 cats.makeNoise();
+
 var massHysteria = function (dogs, cats) {
   if (dogs.raining === true && cats.raining === true) {
     console.log("DOGS AND CATS LIVING TOGETHER! MASS HYSTERIA!");

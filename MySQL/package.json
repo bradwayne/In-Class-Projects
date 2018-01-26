@@ -1,7 +1,6 @@
 {
-  "name": "mysql",
+  "name": "top5000_db_seed",
   "version": "1.0.0",
-  "description": "",
   "main": "auction.js",
   "dependencies": {
     "inquirer": "^5.0.0"
@@ -11,5 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }

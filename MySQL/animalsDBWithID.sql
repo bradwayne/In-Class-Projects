@@ -4,6 +4,8 @@ DROP DATABASE IF EXISTS animals_db;
 CREATE DATABASE animals_db;
 -- Makes it so all of the following code will affect animals_db --
 USE animals_db;
+
+
 -- Creates the table "people" within animals_db --
 CREATE TABLE people (
   -- Creates a numeric column called "id" which will automatically increment its default value as we create new rows --
@@ -34,4 +36,5 @@ VALUES ("Peter", false);
 UPDATE people
 SET has_pet = true, pet_name = "Franklin", pet_age = 2
 WHERE id = 4;
+
 SELECT * FROM people;

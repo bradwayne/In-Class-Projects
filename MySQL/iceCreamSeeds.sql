@@ -5,7 +5,7 @@ CREATE DATABASE ice_creamDB;
 USE ice_creamDB;
 
 SELECT * FROM products;
-
+-- 
 CREATE TABLE products (
   id INT NOT NULL AUTO_INCREMENT,
   flavor VARCHAR(45) NULL,

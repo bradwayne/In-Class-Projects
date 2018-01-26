@@ -159,7 +159,9 @@ connection.connect(function(err) {
     message: "Would you like to add or bid on an item?",
     choices: ["add", "bid"]
   }
-]).then(function(prompt) {
+])
+
+.then(function(prompt) {
 	switch (prompt.userInput) {
 		case "add":
     addCLI();

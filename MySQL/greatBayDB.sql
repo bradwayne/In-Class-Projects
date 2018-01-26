@@ -4,8 +4,8 @@ CREATE DATABASE greatBay_DB;
 
 USE greatBay_DB;
 
-SELECT * FROM auctions;
- 
+-- SELECT * FROM auctions;
+-- --  
 CREATE TABLE auctions (
     id INT NOT NULL AUTO_INCREMENT,
     item_name VARCHAR(100) NOT NULL,
