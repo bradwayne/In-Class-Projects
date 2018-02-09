@@ -13,8 +13,7 @@ To run this file, we do the following in our Terminal:
 -- Create the database task_saver_db and specified it for use.
 CREATE DATABASE wish_saver_db;
 USE wish_saver_db;
--- SELECT * FROM wishes;
-
+ 
 
 -- Create the table tasks.
 CREATE TABLE wishes
